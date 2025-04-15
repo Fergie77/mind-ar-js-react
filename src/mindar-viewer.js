@@ -25,6 +25,15 @@ const MindARViewer = () => {
 
       sceneEl.addEventListener("renderstart", () => {
         arSystem.start(); // start AR
+        // Auto-trigger video playback
+        const video = videoRef.current;
+        const aVideo = aVideoRef.current;
+        if (video && aVideo) {
+          video.play();
+          aVideo.setAttribute("opacity", 1);
+          setStarted(true);
+          setPlaying(true);
+        }
       });
 
       sceneEl.addEventListener("error", (error) => {
