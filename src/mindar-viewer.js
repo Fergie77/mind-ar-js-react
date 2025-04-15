@@ -49,7 +49,7 @@ const MindARViewer = () => {
         <a-assets>
           <video
             id="target"
-            src="/target.MP4"
+            src="/target.mp4"
             autoplay
             loop
             playsinline
