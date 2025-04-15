@@ -15,16 +15,7 @@ function App() {
               setStarted("aframe");
             }}
           >
-            Start AFRAME version
-          </button>
-        )}
-        {started === null && (
-          <button
-            onClick={() => {
-              setStarted("three");
-            }}
-          >
-            Start ThreeJS version
+            Start
           </button>
         )}
         {started !== null && (
