@@ -4,6 +4,10 @@ import "mind-ar/dist/mindar-image-aframe.prod.js";
 
 const MindARViewer = () => {
   const sceneRef = useRef(null);
+  const videoRef = useRef(null);
+  const aVideoRef = useRef(null);
+  const [started, setStarted] = React.useState(false);
+  const [playing, setPlaying] = React.useState(false);
 
   useEffect(() => {
     const sceneEl = sceneRef.current;
@@ -35,8 +39,31 @@ const MindARViewer = () => {
     };
   }, []);
 
+  const handleClick = () => {
+    const video = videoRef.current;
+    const aVideo = aVideoRef.current;
+
+    if (!started) {
+      video.play();
+      aVideo.setAttribute("opacity", 1);
+      setStarted(true);
+      setPlaying(true);
+    } else {
+      if (playing) {
+        video.pause();
+        setPlaying(false);
+      } else {
+        video.play();
+        setPlaying(true);
+      }
+    }
+  };
+
   return (
-    <div style={{ width: "100%", height: "100vh", position: "relative" }}>
+    <div
+      style={{ width: "100%", height: "100vh", position: "relative" }}
+      onClick={handleClick}
+    >
       <a-scene
         ref={sceneRef}
         mindar-image="imageTargetSrc: /target.mind; autoStart: false; uiLoading: yes; uiError: yes; uiScanning: yes;"
@@ -47,15 +74,21 @@ const MindARViewer = () => {
         device-orientation-permission-ui="enabled: false"
       >
         <a-assets>
+          <img id="target" src="/target.png" alt="AR target" />
           <video
-            id="target"
+            id="video"
+            ref={videoRef}
             src="/target.MP4"
+            style={{ opacity: 0 }}
+            width="160"
+            height="90"
             autoplay
             loop
-            playsinline
             muted
-            preload="auto"
-          ></video>
+            playsinline
+            webkit-playsinline
+            crossorigin
+          />
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -68,6 +101,15 @@ const MindARViewer = () => {
             width="1"
             rotation="0 0 0"
           ></a-plane>
+          <a-video
+            ref={aVideoRef}
+            src="#video"
+            position="0 0 0.1"
+            height="1"
+            width="1"
+            opacity="0"
+            rotation="0 0 0"
+          ></a-video>
         </a-entity>
       </a-scene>
     </div>
