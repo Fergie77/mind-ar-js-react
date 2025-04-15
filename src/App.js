@@ -7,7 +7,7 @@ function App() {
   const [started, setStarted] = useState(null);
 
   return (
-
+    <div className="app">
       <div className="control-buttons">
         {started === null && (
           <button
