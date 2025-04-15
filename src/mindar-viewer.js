@@ -19,7 +19,7 @@ const MindARViewer = () => {
   return (
     <a-scene
       ref={sceneRef}
-      mindar-image="imageTargetSrc: ../public/target.mind; autoStart: false; uiLoading: no; uiError: no; uiScanning: no; filterMinCF:0.001; filterBeta: 1000"
+      mindar-image="imageTargetSrc: /target.mind; autoStart: false; uiLoading: no; uiError: no; uiScanning: no; filterMinCF:0.001; filterBeta: 1000"
       color-space="sRGB"
       embedded
       renderer="colorManagement: true, physicallyCorrectLights"
@@ -27,7 +27,7 @@ const MindARViewer = () => {
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
-        <img id="card" src="../public/target.png" alt="AR target" />
+        <img id="card" src="/target.png" alt="AR target" />
         {/* <a-asset-item
           id="avatarModel"
           src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"
