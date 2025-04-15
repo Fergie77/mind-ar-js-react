@@ -14,24 +14,31 @@ const MindARViewer = () => {
     }
 
     console.log("Scene element found, waiting for renderstart...");
-    const arSystem = sceneEl.systems["mindar-image-system"];
-    if (!arSystem) {
-      console.error("MindAR system not found!");
-      return;
-    }
 
-    sceneEl.addEventListener("renderstart", () => {
-      console.log("Render started, starting AR system...");
-      arSystem.start(); // start AR
-    });
+    // Wait for the scene to be loaded
+    sceneEl.addEventListener("loaded", () => {
+      console.log("Scene loaded, initializing AR system...");
+      const arSystem = sceneEl.systems["mindar-image-system"];
+      if (!arSystem) {
+        console.error("MindAR system not found!");
+        return;
+      }
 
-    sceneEl.addEventListener("error", (error) => {
-      console.error("A-Frame error:", error);
+      sceneEl.addEventListener("renderstart", () => {
+        console.log("Render started, starting AR system...");
+        arSystem.start(); // start AR
+      });
+
+      sceneEl.addEventListener("error", (error) => {
+        console.error("A-Frame error:", error);
+      });
     });
 
     return () => {
       console.log("Cleaning up AR system...");
-      arSystem.stop();
+      if (sceneEl.systems["mindar-image-system"]) {
+        sceneEl.systems["mindar-image-system"].stop();
+      }
     };
   }, []);
 
