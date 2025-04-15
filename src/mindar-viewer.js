@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "aframe";
 import "mind-ar/dist/mindar-image-aframe.prod.js";
 
-export default () => {
+const MindARViewer = () => {
   const sceneRef = useRef(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default () => {
       device-orientation-permission-ui="enabled: false"
     >
       <a-assets>
-        <img id="card" src="../public/target.png" />
+        <img id="card" src="../public/target.png" alt="AR target" />
         {/* <a-asset-item
           id="avatarModel"
           src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/examples/image-tracking/assets/card-example/softmind/scene.gltf"
@@ -55,3 +55,5 @@ export default () => {
     </a-scene>
   );
 };
+
+export default MindARViewer;
