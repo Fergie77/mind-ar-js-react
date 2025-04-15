@@ -8,10 +8,7 @@ const MindARThreeViewer = () => {
   useEffect(() => {
     const mindarThree = new MindARThree({
       container: containerRef.current,
-      imageTargetSrc:
-        "https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.0/examples/image-tracking/assets/card-example/card.mind",
-      // imageTargetSrc:
-      //   "https://cdn.jsdelivr.net/gh/Fergie77/Too-Gallus@main/src/public/imgTarget.main",
+      imageTargetSrc: "/target.mind",
     });
 
     const { renderer, scene, camera } = mindarThree;
