@@ -132,7 +132,7 @@ const MindARViewer = () => {
             ref={aVideoRef}
             src="#video"
             position="0 0 0"
-            height="0.5"
+            height="0.6"
             width="1.1"
             opacity="0"
             rotation="0 0 0"
