@@ -41,5 +41,8 @@
   },
   "resolutions": {
     "three": "^0.150.1"
+  },
+  "overrides": {
+    "three": "^0.150.1"
   }
 }

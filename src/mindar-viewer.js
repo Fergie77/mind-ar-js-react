@@ -6,6 +6,12 @@ const MindARViewer = () => {
   const sceneRef = useRef(null);
 
   useEffect(() => {
+    // Wait for A-Frame to be fully loaded
+    if (typeof window.AFRAME === "undefined") {
+      console.error("A-Frame is not loaded!");
+      return;
+    }
+
     console.log("Initializing MindAR viewer...");
     const sceneEl = sceneRef.current;
     if (!sceneEl) {
