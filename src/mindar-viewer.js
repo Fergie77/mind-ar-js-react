@@ -98,7 +98,7 @@ const MindARViewer = () => {
           <video
             id="video"
             ref={videoRef}
-            src="/target.MP4"
+            src="/target2.MP4"
             style={{ opacity: 0 }}
             width="160"
             height="90"
@@ -112,7 +112,7 @@ const MindARViewer = () => {
           <video
             id="video2"
             ref={video2Ref}
-            src="/target2.MP4"
+            src="/target.MP4"
             style={{ opacity: 0 }}
             width="160"
             height="90"
