@@ -50,14 +50,13 @@ function App() {
       </div>
 
       {started === "aframe" && (
-        <div className="container">
+        <div className="container" style={{ width: "100%", height: "100vh" }}>
           <MindARViewer />
-          <video></video>
         </div>
       )}
 
       {started === "three" && (
-        <div className="container">
+        <div className="container" style={{ width: "100%", height: "100vh" }}>
           <MindARThreeViewer />
         </div>
       )}
