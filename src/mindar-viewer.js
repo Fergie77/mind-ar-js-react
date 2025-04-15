@@ -52,9 +52,9 @@ const MindARViewer = () => {
             src="/target.mp4"
             autoplay
             loop
-            playsinline
-            muted
-            preload="auto"
+            // playsinline
+            // muted
+            // preload="auto"
           ></video>
         </a-assets>
 
