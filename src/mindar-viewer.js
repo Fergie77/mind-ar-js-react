@@ -74,7 +74,6 @@ const MindARViewer = () => {
         device-orientation-permission-ui="enabled: false"
       >
         <a-assets>
-          <img id="target" src="/target.png" alt="AR target" />
           <video
             id="video"
             ref={videoRef}
