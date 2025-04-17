@@ -143,7 +143,7 @@ const MindARViewer = () => {
             position="0 -0.5 0.1"
             scale="4 4 4"
             src="#avatarModel"
-            animation="property: position; to: 0 0 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+            animation="property: position; to: 0 -0.5 0.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-gltf-model>
         </a-entity>
         <a-entity mindar-image-target="targetIndex: 1">
