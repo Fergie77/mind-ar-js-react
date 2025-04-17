@@ -141,7 +141,7 @@ const MindARViewer = () => {
           <a-gltf-model
             rotation="0 0 0 "
             position="0 0 0.1"
-            scale="1.5 1.5 1.5"
+            scale="4 4 4"
             src="#avatarModel"
             animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
           ></a-gltf-model>
