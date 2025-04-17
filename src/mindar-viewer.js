@@ -123,10 +123,7 @@ const MindARViewer = () => {
             webkit-playsinline
             crossorigin
           />
-          <a-asset-item
-            id="avatarModel"
-            src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/softmind/scene.gltf"
-          ></a-asset-item>
+          <a-asset-item id="avatarModel" src="/scene.gltf"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
@@ -141,6 +138,13 @@ const MindARViewer = () => {
             opacity="0"
             rotation="0 0 0"
           ></a-video>
+          <a-gltf-model
+            rotation="0 0 0 "
+            position="0 0 0.1"
+            scale="0.005 0.005 0.005"
+            src="#avatarModel"
+            animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+          ></a-gltf-model>
         </a-entity>
         <a-entity mindar-image-target="targetIndex: 1">
           <a-video
@@ -152,13 +156,6 @@ const MindARViewer = () => {
             opacity="0"
             rotation="0 0 0"
           ></a-video>
-          <a-gltf-model
-            rotation="0 0 0 "
-            position="0 0 0.1"
-            scale="0.005 0.005 0.005"
-            src="#avatarModel"
-            animation="property: position; to: 0 0.1 0.1; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
-          ></a-gltf-model>
         </a-entity>
       </a-scene>
     </div>
